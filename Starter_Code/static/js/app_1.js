@@ -45,7 +45,13 @@ function chart(sample){
             }
         };
         // display bubble chart
-        Plotly.newPlot("bubble", [trace1],[bubble_layout]);
+        Plotly.newPlot("bubble", [trace1],{
+          title: "Bacteria Cultures Per Sample",
+          margin: {t:30},
+          hovermode: "closest",
+          xaxis: {title: "OTU ID"},
+          yaxis: {title: "Number of Bacteria"}
+          });
 
         // sort and slice data for desired graph result
         let yticks = otu_ids.slice(0, 10).map(otuID => `OTU ${otuID}`).reverse();
@@ -65,7 +71,12 @@ function chart(sample){
             xaxis: {title: "Number of Bacteria"}
             };
         // plot bar graph
-        Plotly.newPlot("bar", [trace2], [bar_layout] );
+        Plotly.newPlot("bar", [trace2],{
+          title: "Top 10 Bacteria Cultures Found",
+          margin: {t:30},
+          hovermode: "closest",
+          xaxis: {title: "Number of Bacteria"}
+          } );
 
     });
     
