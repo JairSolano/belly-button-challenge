@@ -60,6 +60,7 @@ function chart(sample){
         let trace2 = {
             x: sample_values.slice(0,10).reverse(),
             y: yticks,
+            text: otu_labels,
             type: "bar",
             orientation: "h"
         }
